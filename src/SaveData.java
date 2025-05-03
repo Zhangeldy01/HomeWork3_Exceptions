@@ -11,7 +11,7 @@ public class SaveData {
         File file = new File("fileForWrite.txt");
 
         try (FileWriter writer = new FileWriter("fileForWrite.txt", true)) { // создаем файл и записываем данные
-            writer.write(fileContents+"\n");
+            writer.write(fileContents + "\n");
             writer.flush();
         }
         catch(IOException e) {

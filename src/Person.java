@@ -2,15 +2,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Person {
-
     private String lastName;
     private String firstName;
     private String patronymic;
     private LocalDate dateOfBirth;
-    private String phoneNumber;
+    private long phoneNumber;
     private char sex;
 
-    public void setData(String lastName, String firstName, String patronymic, LocalDate dateOfBirth, String phoneNumber, char sex) {
+    public void setData(String lastName, String firstName, String patronymic, LocalDate dateOfBirth, long phoneNumber, char sex) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymic = patronymic;
@@ -51,11 +50,11 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -70,6 +69,6 @@ public class Person {
     @Override
     public String toString() {
         String dateOfBirthString = dateOfBirth.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        return String.format("<%s><%s><%s><%s><%s><%s>", lastName, firstName, patronymic, dateOfBirthString, phoneNumber, sex);
+        return String.format("<%s><%s><%s><%s><%d><%c>", lastName, firstName, patronymic, dateOfBirthString, phoneNumber, sex);
     }
 }
